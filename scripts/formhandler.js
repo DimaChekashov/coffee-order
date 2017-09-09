@@ -25,13 +25,15 @@
         console.log(item.name + ' is ' + item.value);
       })
       console.log(data);
-      fn(data);
+      fn(data)
+        .then(function(){
+          this.reset();
+          this.elements[0].focus();
+        }.bind(this));
       if(data.size === 'grande' && data.strength > 66){
         $('#myModal').modal('show')
       }
-      this.reset();
       rangeSize.innerText = '';
-      this.elements[0].focus();
     });
   };
 
