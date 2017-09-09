@@ -35,6 +35,43 @@
     });
   };
 
+  FormHandler.prototype.addInputHandler = function(fn){
+    console.log('Setting input handler for form');
+    this.$formElement.on('input', '[name="emailAddress"]', function(event){
+      var emailAddress = event.target.value;
+      var message = '';
+      if(fn(emailAddress)){
+        event.target.setCustomValidity('');
+      }else {
+        message = emailAddress + ' is not an authorized email address!'
+        event.target.setCustomValidity(message);
+      }
+    });
+  }
+
+  FormHandler.prototype.addWordHandler = function(fn, fd){
+    this.$formElement.on('input', '[name="coffee"]', function(event){
+      var word = event.target.value;
+      var message = '';
+      if(fn(word)){
+        event.target.setCustomValidity('');
+      }else{
+        message = word + ' is not valid word';
+        event.target.setCustomValidity(message);
+      }
+    });
+    this.$formElement.on('input', '[name="strength"]', function(event){
+      var num = event.target.value;
+      var message = '';
+      if(fd(num)){
+        event.target.setCustomValidity
+      }else{
+        message = num + ' is very hot';
+        event.target.setCustomValidity(message);
+      }
+    });
+  }
+
   document.getElementById('strengthLevel').addEventListener('change', function(){
     rangeSize.innerText = this.value;
     if(this.value < 33){

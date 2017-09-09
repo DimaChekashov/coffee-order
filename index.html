@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>coffeerun</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesheets/style.css">
 </head>
 <body class="container">
 
@@ -18,11 +19,11 @@
         <form data-coffee-order="form">
           <div class="form-group">
             <label for="coffeeOrder">Coffee Order</label>
-            <input class="form-control" id="coffeeOrder" name="coffee" autofocus> 
+            <input class="form-control" id="coffeeOrder" name="coffee" autofocus required pattern="[a-zA-Z\s]+"> 
           </div>
           <div class="form-group">
             <label for="emailInput">Email</label>
-            <input class="form-control" type="email" id="emailInput" name="emailAddress" value="" placeholder="someaddress@gmail.com"> 
+            <input class="form-control" type="email" id="emailInput" name="emailAddress" value="" placeholder="someaddress@gmail.com" required> 
           </div>
           <div class="radio">
             <label>
@@ -90,6 +91,7 @@
   </div>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js" charset="utf-8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.6/js/bootstrap.min.js" charset="utf-8"></script>
+  <script src="scripts/validation.js" charset="utf-8"></script>
   <script src="scripts/checklist.js" charset="utf-8"></script>
   <script src="scripts/formhandler.js" charset="utf-8"></script>
   <script src="scripts/datastore.js" charset="utf-8"></script>
